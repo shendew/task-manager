@@ -1,4 +1,4 @@
-# 🚀 Task Manager (artist-lk)
+# 🚀 Task Manager
 
 A modern Task Management application built with **Laravel 11**, **MySQL**, and **Tailwind CSS v4**.
 
@@ -16,8 +16,9 @@ A modern Task Management application built with **Laravel 11**, **MySQL**, and *
 
 ### 1. Clone the repository
 
-git clone [https://github.com/your-username/artist-lk.git](https://github.com/your-username/artist-lk.git)
-cd artist-lk
+    git clone [https://github.com/shendew/task-manager.git](https://github.com/shendew/task-manager.git)
+
+    cd task-manager
 
 
 ### 2. Install Dependencies
@@ -25,23 +26,23 @@ cd artist-lk
 Install both the PHP and JavaScript packages required for the project:
 Bash
 
-composer install
-npm install
+    composer install
+    npm install
 
 ### 3. Environment Configuration
 
 Create your environment file and generate a unique application key:
 Bash
 
-cp .env.example .env
-php artisan key:generate
+    cp .env.example .env
+    php artisan key:generate
 
 ### 4. Database Setup
 
-    Create a new MySQL database named artist_lk.
+Create a new MySQL database named artist_lk.
 
-    Open your .env file and update these lines with your local database details:
-    Code snippet
+Open your .env file and update these lines with your local database details:
+Code snippet
 
     DB_CONNECTION=mysql
     DB_HOST=127.0.0.1
@@ -55,21 +56,27 @@ php artisan key:generate
 Build your database tables and structure:
 Bash
 
-php artisan migrate
+    php artisan migrate
 
 ### 6. Start the Application
 
 Run these commands in two separate terminal windows:
 
-    Terminal 1 (PHP Server):
+Terminal 1 (PHP Server):
     Bash
 
     php artisan serve
 
-    Terminal 2 (Vite Assets):
+Terminal 2 (Vite Assets):
     Bash
 
     npm run dev
+
+or 
+
+    Bash
+
+    composer run dev
 
 Your app is now live at: http://localhost:8000
 📋 Key Features
