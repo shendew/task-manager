@@ -47,9 +47,34 @@ class TaskController extends Controller
         return redirect()->route('dashboard')->with('success', 'Task marked as completed.');
     }
 
+    public function mark_as_uncompleted(Task $task)
+    {
+        $task->update(['status' => false]);
+
+        return redirect()->route('dashboard')->with('success', 'Task marked as uncompleted.');
+    }
+
     public function view(Task $task)
     {
         return view('tasks.show', ['task' => $task]);
+    }
+
+    public function showEdit(Task $task)
+    {
+        return view('tasks.edit', ['task' => $task]);
+    }
+
+    public function update(Task $task, Request $request)
+    {
+        $validated = $request->validate([
+            'title' => 'required|string|max:255',
+            'description' => 'required|string',
+            'status' => 'boolean',
+        ]);
+
+        $task->update($validated);
+
+        return redirect()->route('dashboard')->with('success', 'Task updated successfully.');
     }
 
     public function delete(Task $task)

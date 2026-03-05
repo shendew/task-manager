@@ -26,6 +26,9 @@ Route::middleware('auth')->group(function () {
     Route::post('/tasks/store', [TaskController::class, 'store'])->name('store');
     Route::get('/tasks/view/{task}', [TaskController::class, 'view'])->name('task.show');
     Route::post('/tasks/complete/{task}', [TaskController::class, 'mark_as_completed'])->name('task.complete');
+    Route::post('/tasks/uncomplete/{task}', [TaskController::class, 'mark_as_uncompleted'])->name('task.uncomplete');
+    Route::get('/tasks/edit/{task}', [TaskController::class, 'showEdit'])->name('task.showEdit');
+    Route::put('/tasks/update/{task}', [TaskController::class, 'update'])->name('task.update');
     Route::delete('/tasks/delete/{task}', [TaskController::class, 'delete'])->name('task.delete');
     // Route::resource('tasks', TaskController::class);
 });
